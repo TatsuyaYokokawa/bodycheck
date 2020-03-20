@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_20_080541) do
+ActiveRecord::Schema.define(version: 2020_03_20_093022) do
 
-  create_table "bodyinfo", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "bodyinfos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date"
     t.integer "sex"
     t.integer "age"
@@ -21,18 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_080541) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_bodyinfo_on_user_id"
-  end
-
-  create_table "bodyinfos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "date"
-    t.integer "sex"
-    t.integer "age"
-    t.integer "height"
-    t.integer "weight"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bodyinfos_on_user_id"
   end
 
   create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,5 +37,5 @@ ActiveRecord::Schema.define(version: 2020_03_20_080541) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bodyinfo", "users"
+  add_foreign_key "bodyinfos", "users"
 end
