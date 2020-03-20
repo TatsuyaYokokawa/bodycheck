@@ -1,6 +1,6 @@
-class Bodyinfo < ActiveRecord::Migration[5.2]
+class CreateBodyinfos < ActiveRecord::Migration[5.2]
   def change
-    create_table :bodyinfo do |t|
+    create_table :bodyinfos do |t|
 
       t.date       :date
       t.integer    :sex
@@ -8,9 +8,8 @@ class Bodyinfo < ActiveRecord::Migration[5.2]
       t.integer    :height
       t.integer    :weight
       t.references :user, foreign_key: true
-
+      
       t.timestamps
-
     end
   end
 end
