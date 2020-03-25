@@ -1,20 +1,22 @@
 <br>
-  <div class=sex>
-    <div class = man>
-      <label for="man">
-        <input type="radio" name="sex" id="man"> 男性
-      </label>
+  <form id="sex">
+    <div class=sex>
+      <div class = man>
+        <label for="man">
+          <input type="radio" name="sex" id="man" value="5"> 男性
+        </label>
+      </div>
+      <div class = woman>
+        <label for="woman">
+          <input type="radio" name="sex" id="woman"value="-161" checked> 女性
+        </label>
+      </div>
     </div>
-    <div class = woman>
-      <label for="woman">
-        <input type="radio" name="sex"id="woman"> 女性
-      </label>
-    </div>
-  </div>
+  </form>
 <br>
   <div class="age">
     年齢
-    <input type="tel" id = age>
+    <input type="tel" name = age id = age>
     <br>
     (歳)
   </div>
@@ -22,19 +24,63 @@
 <br>
   <div class="tall">
     身長
-    <input type="tel" id = tall>
+    <input type="tel" name = tall id = tall>
     (cm)
   </div>
 <br>
 <br>
   <div class="weight">
     体重
-    <input type="tel" id = weight>
+    <input type="tel" name = weight id = weight>
     (kg)
   </div>
 <br>
 <br>
+<br>運動量
+  <form id="active">
+    <div class=active>
+      <div class = less>
+        <label for="less">
+          <input type="radio" name="active" id="less" value="1200"> 少なめ
+        </label>
+      </div>
+      <div class = simple>
+        <label for="simple">
+          <input type="radio" name="active" id="simple"value="1500" checked> 普通
+        </label>
+      </div>
+      <div class = athlete>
+        <label for="athlete">
+          <input type="radio" name="active" id="athlete" value="1725"> 多め
+        </label>
+      </div>
+    </div>
+  </form>
+<br>
+
+<br>目的
+  <form id = "purpose">
+    <div class = purpose>
+      <div class = loss>
+        <label for="loss">
+          <input type="radio" name="purpose" id="loss" value="8"> 減量
+        </label>
+      </div>
+      <div class = retain>
+        <label for="retain">
+          <input type="radio" name="purpose" id="retain"value="10" checked> 維持
+        </label>
+      </div>
+      <div class = increase>
+        <label for="increase">
+          <input type="radio" name="purpose" id="increase" value="12"> 増量
+        </label>
+      </div>
+    </div>
+  </form>
+<br>
+<br>
 <div class="btn">
-  <input type="button" value=計算 id = button>
-  <input type="reset" value=リセット id = reset>
+  <input type="button" name = button value=計算 id = button>
+  <input type="reset" name = reset value=リセット id = reset>
 </div>
