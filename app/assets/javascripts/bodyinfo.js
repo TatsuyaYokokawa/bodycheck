@@ -5,20 +5,19 @@ window.addEventListener('DOMContentLoaded', function(){
   $('input[id="woman"]').prop('checked', false);
 
   //性別選択イベント
-  $('input[name="man"]').change(function() {
-    $('input[name="woman"]').prop('checked', false);
+  $('input[id="man"]').change(function() {
+    $('input[id="woman"]').prop('checked', false);
     var man = $(this).val();
-    console.log( man );
     })
   $('input[name="woman"]').change(function() {
     $('input[name="man"]').prop('checked', false);
     var woman = $(this).val();
-    console.log( woman );
     })
 
   //計算ボタンクリックアクション
   $('input[name="button"]').click(function() { 
-
+    
+    //input-txit
     var weight = $('input[name="weight"]').val();
     var tall = $('input[name="tall"]').val();
     var age = $('input[name="age"]').val();
@@ -46,16 +45,18 @@ window.addEventListener('DOMContentLoaded', function(){
     } else {
       var purpose = a ;
     }
+
+    if ( age === "" || tall === "" || weight === "" || isNaN(age) == true || isNaN(tall) == true || isNaN(weight) == true) {
+      alert('入力フォームに半角数字を入力してください。');
+    } else {
     //一日の摂取カロリー
     total_kcl = 10 *parseInt(weight) +6.25 * parseInt(tall) -5 *parseInt(age)+parseInt(sex);
       total_kcl_act = parseInt(total_kcl) *parseInt(active)*1/100 ;
       total_kcl_pps = parseInt(total_kcl_act) *parseInt(purpose)*1/100 ;
-      console.log( total_kcl_pps );
       total_kcl = parseInt(total_kcl_pps) *10;
       total_kcl_fin = Math.round(total_kcl) /10;
       target = document.getElementById("kcl");
       target.innerHTML = parseInt(total_kcl_fin) ;
-      console.log( target );
     //摂取炭水化物
     total_carbo = parseInt(total_kcl_fin) *0.75 / 4 *10
       total_carbo = Math.round(total_carbo) / 10;
@@ -70,6 +71,7 @@ window.addEventListener('DOMContentLoaded', function(){
       total_lipid = Math.round(total_lipid) / 10;
       target = document.getElementById("lipid");
       target.innerHTML = total_lipid;
+    }
     })
     //リセットボタン
     $('input[name="reset"]').click(function() { 
