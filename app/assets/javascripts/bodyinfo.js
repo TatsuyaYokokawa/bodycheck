@@ -1,41 +1,10 @@
 window.addEventListener('DOMContentLoaded', function(){
-  function buildHTML(index){
-    var html = `<div class=wrapper>
-    <header>
-      <div class= header>
-        <div class= contents>
-          <i class="fas fa-sign-in-alt">
-            <a href="#"class= content>ログイン</a>
-          </i>
-        </div>
-        <div class= header-contents>
-          <h1 class= title>BodyCheck</h1>
-          <p>体型が変わると、人生が変わる。</p>
-        </div>
-      </div>
-    </header>
-    <div class = "main">
-      <div class = "main-contents">
-        <h2 class= "main-title">基礎代謝計算</h2>
-        <div class="form">
-          <%= render "form" %>
-        </div>
-        <div class = "contents-right">
-          <%= render "contents-right" %>
-        </div>
-      </div>
-    </div>
-    <div class= footer>
-    </div>
-  </div>
-  `
-  return html;
-  }
+  
   //初期sex-radio
   $('input[id="man"]').prop('checked', true);
   $('input[id="woman"]').prop('checked', false);
 
-    //性別選択イベント
+  //性別選択イベント
   $('input[name="man"]').change(function() {
     $('input[name="woman"]').prop('checked', false);
     var man = $(this).val();
@@ -104,10 +73,29 @@ window.addEventListener('DOMContentLoaded', function(){
     })
     //リセットボタン
     $('input[name="reset"]').click(function() { 
-      $('input[name="man"]').prop('checked', true);
-      $('input[name="woman"]').prop('checked', false);
+      //性別radio
+      $('input[id="man"]').prop('checked', true);
+      $('input[id="woman"]').prop('checked', false);
+      //性別radio
+      $('input[id="simple"]').prop('checked', true);
+      $('input[id="less"]').prop('checked', false);
+      $('input[id="athlete"]').prop('checked', false);
+      //性別radio
+      $('input[id="retain"]').prop('checked', true);
+      $('input[id="loss"]').prop('checked', false);
+      $('input[id="increase"]').prop('checked', false);
+      //input-text
       $('input[name="age"]').val('');
       $('input[name="tall"]').val('');
       $('input[name="weight"]').val('');
+      //output-txit
+      kcl = document.getElementById("kcl");
+      kcl.innerHTML = '';
+      carbo = document.getElementById("carbo");
+      carbo.innerHTML = '';
+      protein = document.getElementById("protein");
+      protein.innerHTML = '';
+      lipid = document.getElementById("lipid");
+      lipid.innerHTML = '';
     })
 });
