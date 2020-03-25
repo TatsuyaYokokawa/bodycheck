@@ -7,7 +7,7 @@ class CreateBodyinfos < ActiveRecord::Migration[5.2]
       t.integer    :age
       t.integer    :height
       t.integer    :weight
-      t.references :user, foreign_key: true
+      # t.references :user, foreign_key: true
       
       t.timestamps
     end
