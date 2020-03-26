@@ -1,0 +1,27 @@
+.show-wrapper{
+  height: 100vh;
+  width: auto;
+  display: flex;
+ .show-said{
+   background-color: red;
+   height: 100vh;
+   width: 400px;
+   .macro{
+     background-color: chartreuse;
+     height: 400px;
+     width: 350px;
+     margin: 30px auto;
+   }
+   .hyouzi{
+     background-color: cyan;
+     height: calc(100% - 480px);
+     width: 350px;
+     margin: 20px auto;
+   }
+ } 
+ .show-main{
+  background-color: blue;
+  height: 100vh;
+  width: calc(100% - 400px);
+ }
+  }

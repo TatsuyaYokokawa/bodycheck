@@ -7,23 +7,38 @@
     background-position: center;
     width:  100%;
     height: 300px;
-    padding: 0 0 40px;
+    padding: 10px 0 40px;
     // display:flex ;
-    // justify-content:space-between;
     .contents{
-      background-color: rgb(158, 25, 25);
+      background-color:skyblue;
       display: flex;
-      height: 40px;
-      width:  100%;
+      height: 30px;
+      width:  175px;
+      margin: 0px 0 0 113vh ;
+      border-radius: 5px;
+      opacity:0.7;
       display: block;
-      text-align: right;
-      .content{
-        color: black;
+      justify-content: end;
+      .content-new{
+        color: white;
         text-decoration: none;
-        margin: 10px 10px 0 0;
+        font-weight:bold;
+        margin: 10px 10px
+        }
+      .content-in{
+        color: white;
+        text-decoration: none;
+        font-weight:bold;
+        margin: 10px 10px;
+        }
+      .content-out{
+        color: white;
+        text-decoration: none;
+        font-weight:bold;
+        margin:  0px 5px 5px 0px;
         }
       }
-    .header-contents{
+    .header-main{
       // background-color: blue;
       height: 100px;
       width: 100%;
@@ -36,7 +51,7 @@
       }
     }
   .main{
-    background-color: rgb(203, 241, 255);
+    background-color: whitesmoke;
     height: 100vh;
     padding-top: 40px;
     display: flex;
@@ -46,6 +61,7 @@
       width: calc(100% - 200px);
       margin: auto;
       padding: 20px;
+      border-radius: 5px;
       position: relative;
       .main-title{
         background-color:gray;
@@ -53,6 +69,7 @@
         height: 60px;
         width: 100%;
         font-size: 40px;
+        border-radius: 5px;
         text-align: center;
         font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
       }
