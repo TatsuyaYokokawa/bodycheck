@@ -3,25 +3,43 @@
   width: auto;
   display: flex;
  .show-said{
-   background-color: red;
+   background-color: wheat;
    height: 100vh;
-   width: 400px;
+   width: 300px;
+   border-right: solid 1px;
    .macro{
-     background-color: chartreuse;
+    //  background-color: chartreuse;
      height: 400px;
      width: 350px;
-     margin: 30px auto;
+     margin: 20px auto;
+     .macro_form{
+      width: 300px;
+      margin: 0px auto;
+      padding-top: 30px;
+     }
    }
    .hyouzi{
-     background-color: cyan;
+    //  background-color: cyan;
      height: calc(100% - 480px);
      width: 350px;
      margin: 20px auto;
    }
  } 
  .show-main{
-  background-color: blue;
+  background-image: url(0195361552dfac602d6ca850651dd2364c663ac0.jpg);
+  background-repeat:  no-repeat;   
+  background-size: cover;
+  background-position: center;
   height: 100vh;
-  width: calc(100% - 400px);
- }
+  width: calc(100% - 300px);
+  .show-out{
+    width: 250px;
+    margin: auto;
+    padding: 50px;
   }
+ }
+}
+.saidber{
+  width: 30px;
+  height: 100%;
+}

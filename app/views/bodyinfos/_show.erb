@@ -1,0 +1,87 @@
+<div class= show-wrapper>
+  <div class= show-said>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "macro"  %>  
+    <div class= macro>
+      <div class= macro_form>
+        <form id="sex">
+          <div class=sex>
+            <div class = man>
+              <label for="man">
+                <input type="radio" name="sex" id="man" value="5"> 男性
+              </label>
+            </div>
+            <div class = woman>
+              <label for="woman">
+                <input type="radio" name="sex" id="woman"value="-161" checked> 女性
+              </label>
+            </div>
+          </div>
+        </form>
+        <%= form_for :bodyinfo  do |f|%>
+          <br>
+          <br>
+          <%= f.label :年齢 %><br />
+          <%= f.text_field :age %><br>
+          <br>
+          <br>
+          <%= f.label :身長 %><br />
+          <%= f.text_field :height %><br>
+          <br>
+          <br>
+          <%= f.label :体重 %><br />
+          <%= f.text_field :weight %><br>
+          <br>
+          <br>
+          <%= f.submit "送信" %>
+        <% end  %>
+      </div>
+    </div>
+    <div class = hyouzi>
+    </div>
+  </div>
+  <div class= show-main>
+    <div class = show-input>
+      <div class="weight">
+        <%#= form_for :bodyinfo  do |f|%>
+          <%#= f.label :体重 %><br />
+          <%#= f.text_field :weight %><br>
+          <%#= f.submit "送る" %>
+        <%# end  %>
+    <div class= show-out>
+      <br>
+        一日の摂取カロリー
+      <br>
+        <div class="kcl" id =kcl>
+          <input type="tel" id =kcl readonly>
+        </div>(kcl)
+      <br>
+
+      <br>
+        摂取炭水化物
+      <br>
+        <div class="carbo" id = carbo>
+          <input type="tel" id = carbo readonly>
+        </div>( g )
+      <br>
+        <br>
+          摂取タンパク質
+        <br>
+        <div class="protein" id = protein>
+          <input type="tel" id = protein readonly>
+        </div>( g )
+      <br>
+      <br>
+          摂取脂質
+      <br>
+        <div class="lipid" id = lipid>
+          <input type="tel" id = lipid readonly>
+        </div>( g )
+      <br>
+      </div>
+    </div>
+  </div>
+</div>
+<div class ="saidber">
+  
+</div >
+  <%# <%= link_to "新規投稿", "#", class: "#" %>  

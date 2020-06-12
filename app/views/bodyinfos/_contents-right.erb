@@ -1,3 +1,5 @@
+
+<% if user_signed_in? %>
 <br>
   一日の摂取カロリー
 <br>
@@ -22,8 +24,57 @@
 <br>
 <br>
     摂取脂質
-  <br>
-<div class="lipid" id = lipid>
+<br>
+  <div class="lipid" id = lipid>
     <input type="tel" id = lipid readonly>
   </div>( g )
 <br>
+<%= form_for :bodyinfo  do |f|%>
+  <%= f.label :sex %><br />
+  <%= f.text_field :sex %>
+
+  <%= f.label :age %><br />
+  <%= f.text_field :age %>
+
+  <%= f.label :height %><br />
+  <%= f.text_field :height %>
+
+  <%= f.label :weight %><br />
+  <%= f.text_field :weight %>
+  <%= f.submit "Sign up" %>
+<% end  %>
+<% else %>
+<br>
+  一日の摂取カロリー
+<br>
+  <div class="kcl" id =kcl>
+    <input type="tel" id =kcl readonly>
+  </div>(kcl)
+<br>
+
+<br>
+  摂取炭水化物
+<br>
+  <div class="carbo" id = carbo>
+    <input type="tel" id = carbo readonly>
+  </div>( g )
+<br>
+  <br>
+    摂取タンパク質
+  <br>
+  <div class="protein" id = protein>
+    <input type="tel" id = protein readonly>
+  </div>( g )
+<br>
+<br>
+    摂取脂質
+<br>
+  <div class="lipid" id = lipid>
+    <input type="tel" id = lipid readonly>
+  </div>( g )
+<br>
+<br>
+<br>
+<br>
+※ログインすると自身の基礎代謝を保存出来ます。
+<% end %>

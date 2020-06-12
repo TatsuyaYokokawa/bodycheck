@@ -1,32 +1,31 @@
-<div class=wrapper>
-  <header>
-    <div class= header>
-      <div class= contents>
-        <% if user_signed_in? %>
-          <%= link_to "新規投稿", "#", class: "content-new" %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "content-out" %>
-        <% else %>
+<% if user_signed_in? %>
+<%= render "show" %>
+<% else %>
+  <div class=wrapper>
+    <header>
+      <div class= header>
+        <div class= contents>
           <%= link_to "ログイン", new_user_session_path, class: "content-new" %>
           <%= link_to "新規登録", new_user_registration_path, class: "content-new" %>
-        <% end %>
+        </div>
+        <div class= header-main>
+          <h1 class= title>BodyCheck</h1>
+          <p>体型が変わると、人生が変わる。</p>
+        </div>
       </div>
-      <div class= header-main>
-        <h1 class= title>BodyCheck</h1>
-        <p>体型が変わると、人生が変わる。</p>
+    </header>
+    <div class = "main">
+      <div class = "main-contents">
+        <h2 class= "main-title">基礎代謝計算</h2>
+        <div class="form">
+          <%= render "form" %>
+        </div>
+        <div class = "contents-right">
+          <%= render "contents-right" %>
+        </div>
       </div>
     </div>
-  </header>
-  <div class = "main">
-    <div class = "main-contents">
-      <h2 class= "main-title">基礎代謝計算</h2>
-      <div class="form">
-        <%= render "form" %>
-      </div>
-      <div class = "contents-right">
-        <%= render "contents-right" %>
-      </div>
+    <div class= footer>
     </div>
   </div>
-  <div class= footer>
-  </div>
-</div>
+<% end %>

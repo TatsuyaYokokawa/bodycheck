@@ -1,6 +1,7 @@
 class BodyinfosController < ApplicationController
 
   def index
+    @bodyinfos = Bodyinfo.all
   end
 
   def show
@@ -13,16 +14,18 @@ class BodyinfosController < ApplicationController
   end
 
   def create
-    @bodyinfo = Bodyinfo.new(user_params)
-    if @bodyinfo.save
-      redirect_to root_path, notice: 'グループを作成しました'
-    else
-      render :new
-    end
+    Bodyinfo.create(user_params)
+    redirect_to root_path
+  end
+
+  def update
+    @bodyinfo = Bodyinfo.find(params[:id])
+    @bodyinfo.update(user_params)
+    redirect_to post_path(bodyinfo.id)
   end
 
   private
   def user_params
-    params.require(:bodyinfo).permit(:date, :sex, :age, :height, :weight)
+    params.require(:bodyinfo).permit(:sex, :age, :height, :weight, user_ids: [])
   end
 end
